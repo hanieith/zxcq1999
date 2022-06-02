@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="card box-shadow m-2 form-wrap">
-                <div class="card-header text-center">
-                    <h3>Save names in db</h3>
-                </div>
-                <form id="form" class="p-3" action='' method="POST">
-                    {% csrf_token %}
-                    <div class="form-row">
-                        <div class="form-group col-md-9 mb-0">
-                            <label for="name">Name</label>
-                            <input id='name' type="text" class="form-control" name="names">
-                        </div>
-                        <div class="form-group col-md-3 mb-0">
-                            <hr>
-                            <button type="button" class="btn btn-primary">More..</button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="submit-btn mt-3">
-                        <button type="submit" class="btn btn-primary">Save in db</button>
-                    </div>
-                </form>
+<div class="container">
+    <div class="row">
+        <div class="card box-shadow m-2 form-wrap">
+            <div class="card-header text-center">
+                <h3>Save names in db</h3>
             </div>
+            <form id="form" class="p-3" action='' method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div id="add_field_area">
+                        <div class="form-group col-md-9 mb-0 add" id="add">
+                            <label for="name">Name</label>
+                            <input id='name' type="text" class="form-control" name="name1">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 mb-0">
+                        <button type="button" onclick="addfields();" class="btn btn-primary">More..</button>
+                    </div>
+                </div>
+                <div class="submit-btn mt-3">
+                    <button type="submit" class="btn btn-primary">Save in db</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+<script src="{% static '/js/addfields.js' %}"
 {% endblock %}
