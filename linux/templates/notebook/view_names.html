@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Hello</h1>
+
+{% for item in names %}
+<p style="color:white; font-size: 20px;">{{item.name}}</p>
+<br>
+{% endfor %}
+
 {% endblock %}
